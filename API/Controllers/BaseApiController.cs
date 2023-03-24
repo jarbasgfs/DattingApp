@@ -8,12 +8,14 @@ using API.Data;
 
 namespace API.Controllers
 {
-    public class DefaultController: ControllerBase
+    [ApiController]
+    [Route("api/[controller]")]
+    public class BaseApiController: ControllerBase
     {
 
         protected readonly DataContext _context;
 
-        public DefaultController(DataContext context)
+        public BaseApiController(DataContext context)
         {
             _context = context;
         }
